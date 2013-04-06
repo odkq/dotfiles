@@ -1,25 +1,48 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! XTerm settings
 ! Setup things for antialiasing text, and to send 
 ! escape sequences to screen when pressing Alt-1
 ! Alt-2 ... etc
+! Also find a nice vga emulation mode below
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 XTerm*VT100.eightBitInput: false
+! By default xterm sets up a two or three pixels
+! border with, wasted space
 XTerm*BorderWidth: 0
+! Launch a login shell, with all init files
 XTerm*loginShell: true
+! Wether to support color or not 
 XTerm*colorMode: true
+! Best terminfo name for an xterm with color
 XTerm*termName: xterm-color
+! Slightly gray for white, to allow for bold white
+! to be brighter
 XTerm*foreground: rgb:a8/a8/a8
 XTerm*background: black
+! Use the antialiased font bitstream mono
+! http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
+! In Debian, apt-get install ttf-bitstream-vera
 XTerm*faceName: 'Bitstream Vera Sans Mono'
+! Size of the font
 XTerm*faceSize: 12
+! Default window size in chars
 XTerm*VT100.geometry: 80x24
+! Save 2000 lines of scrollback (Caps+AvPag, Caps+Repag)
 XTerm*saveLines: 2000
+! Redefine what is a space for better handling of middle button
+! copy&paste
 XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+! Change 'underlined' text for 'italic' text 
 XTerm*italicULMode: true
-XTerm*boldMode: true
-!XTerm*colorBDMode: true
-!XTerm*colorBD: white
-! Make Alt+1, Alt+n send Control+O + N for screen
-! window switching
+! Do not allow bold attribute to overstrike fonts
+XTerm*boldMode: false
+! Allow for bold attribute to have brigther colors
+XTerm*colorBDMode: true
+! Bold color for default (bright white)
+XTerm*colorBD: white
+! screen shortcuts
+! This is to send C-o + 1, C-o + 2, etc for
+! screen window switching with Alt-1, Alt-2 and so
 *VT100.translations: #override \n\
 Meta ~Ctrl<Key>0: string(0x0f) string("9") \n\
 Meta ~Ctrl<Key>1: string(0x0f) string("0") \n\
