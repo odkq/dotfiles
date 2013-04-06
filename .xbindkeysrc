@@ -1,0 +1,24 @@
+# This bind keys volume keys in the Lenovo T400 to
+# alsamixer commands and such
+
+# Default 'show' combination
+"xbindkeys_show" 
+  control+shift + q
+
+# Use the Blue 'ThinkVantage' button as a showtcut
+# to lock the screen.
+"xscreensaver-command -lock"
+  XF86Launch1
+
+# Raise volume by 5% when pressing the volup key
+"aumix -v+5"
+  XF86AudioRaiseVolume
+
+# Lower main mixer volume by 5%
+"aumix -v-5"
+  XF86AudioLowerVolume
+
+# Mute
+"aumix -v0"
+  XF86AudioMute
+

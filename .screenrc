@@ -1,0 +1,30 @@
+# screen configuration file
+startup_message off
+# Change escape charater to C-o to allow C-a have its
+# usual emacs and shell meaning (move cursor to beginning
+# of line)
+escape ^Oo
+# This will determine the $TERM environment variable, and the
+# behaviour of all ncurses/terminfo program
+term xterm-color
+shell bash
+# Lastline 'tab numbering' is not needed because the prompt
+# shows the tty you're in (see .bashrc)
+# hardstatus alwayslastline "%-Lw%{= WK}%50>%n%f* %t%{-}%+Lw%< "
+shelltitle $
+# Open 9 windows, from Alt-1 to Alt-n (see .Xresources to see
+# how the keys are mapped for xterm)
+screen -t " " bash
+screen -t " " bash
+screen -t " " bash
+screen -t " " bash
+screen -t " " bash
+screen -t " " bash
+screen -t " " bash
+screen -t " " bash
+screen -t " " bash
+# screen -t " " bash
+# Some ancient and obscure programs depends on the next setting
+# to redraw things
+defbce "on"
+
