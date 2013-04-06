@@ -2,11 +2,9 @@
 # Irssi configuration setup to connect to freenode and use
 # xmpp plugin to connect to google talk. You can use
 # irc and google talk at the same time, just remember to
-# setup the command window to the irc, for example with
+# switch in the command window between them with Control-X
 #
-# /window server freenode
-#
-# Otherwise regular commands (/nick, /join, etc) will need
+# Regular commands (/nick, /join, etc) can be called with
 # a network prefix, for example:
 # 
 # /msg -gtalk someone@gmail.com <msg>
