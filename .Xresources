@@ -9,7 +9,7 @@ XTerm*colorMode: true
 XTerm*termName: xterm-color
 XTerm*foreground: rgb:a8/a8/a8
 XTerm*background: black
-XTerm*faceName: 'DPCustomMono2'
+XTerm*faceName: 'Bitstream Vera Sans Mono'
 XTerm*faceSize: 12
 XTerm*VT100.geometry: 80x24
 XTerm*saveLines: 2000
