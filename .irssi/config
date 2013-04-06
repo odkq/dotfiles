@@ -1,0 +1,80 @@
+#
+# Irssi configuration setup to connect to freenode and use
+# xmpp plugin to connect to google talk. You can use
+# irc and google talk at the same time, just remember to
+# setup the command window to the irc, for example with
+#
+# /window server freenode
+#
+# Otherwise regular commands (/nick, /join, etc) will need
+# a network prefix, for example:
+# 
+# /msg -gtalk someone@gmail.com <msg>
+# /msg -freenode some_nick <msg>
+#
+# See http://irssi.org/beginner/#c6
+#
+# Use /roster to see connected gtalk contacts and just
+# regular /msg <address> to msg them
+#
+# In debian, apt-get install irssi-plugin-xmpp
+# 
+# For freenode, send the authentication to /nickserv on
+# connection
+servers = (
+  {
+    address = "talk.google.com";
+    chatnet = "gtalk";
+# Put your gmail password here for gtalk
+    password = "your_gmail_password";
+# Connect on startup (and reconnect on network down
+    autoconnect = "yes";
+  },
+# Freenode server, autoconnecting also
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+# Put your gmail address in nick = "gmail_address" for gtalk
+# to work with irssi
+  gtalk = { type = "XMPP"; nick = "your_gmail_address@gmail.com"; 
+# Next line will send automatically a greeting message to someone
+# on line
+#    autosendcmd = "/msg -freenode someone@gmail.com ** irssi **";
+  };
+  freenode = {
+    type = "IRC";
+# Your registered nick on freenode
+    nick = "your_nickname_on_freenode";
+# This will send your credentials to nickserv automatically for
+# your registered nick
+    autosendcmd = "/msg nickserv identify password_on_freenode ;wait 2000";
+    max_kicks = "1";
+    max_msgs = "4";
+    max_modes = "4";
+    max_whois = "1";
+  };
+};
+
+channels = (
+  { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
+# Put here any channel you want to autoconnect into
+  { name = "#somechan"; chatnet = "freenode"; autojoin = "Yes"; }
+);
+
+aliases = {
+  J = "join";
+  SAY = "msg *";
+  R = "rooster";
+  RESET = "set -default";
+};
+
+settings = {
+  core = { real_name = ""; user_name = "user"; nick = "user"; };
+  "fe-text" = { actlist_sort = "refnum"; };
+};
