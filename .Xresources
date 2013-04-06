@@ -1,0 +1,98 @@
+! XTerm settings
+! Setup things for antialiasing text, and to send 
+! escape sequences to screen when pressing Alt-1
+! Alt-2 ... etc
+XTerm*VT100.eightBitInput: false
+XTerm*BorderWidth: 0
+XTerm*loginShell: true
+XTerm*colorMode: true
+XTerm*termName: xterm-color
+XTerm*foreground: rgb:a8/a8/a8
+XTerm*background: black
+XTerm*faceName: 'DPCustomMono2'
+XTerm*faceSize: 12
+XTerm*VT100.geometry: 80x24
+XTerm*saveLines: 2000
+XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+XTerm*italicULMode: true
+XTerm*boldMode: true
+!XTerm*colorBDMode: true
+!XTerm*colorBD: white
+! Make Alt+1, Alt+n send Control+O + N for screen
+! window switching
+*VT100.translations: #override \n\
+Meta ~Ctrl<Key>0: string(0x0f) string("9") \n\
+Meta ~Ctrl<Key>1: string(0x0f) string("0") \n\
+Meta ~Ctrl<Key>2: string(0x0f) string("1") \n\
+Meta ~Ctrl<Key>3: string(0x0f) string("2") \n\
+Meta ~Ctrl<Key>4: string(0x0f) string("3") \n\
+Meta ~Ctrl<Key>5: string(0x0f) string("4") \n\
+Meta ~Ctrl<Key>6: string(0x0f) string("5") \n\
+Meta ~Ctrl<Key>7: string(0x0f) string("6") \n\
+Meta ~Ctrl<Key>8: string(0x0f) string("7") \n\
+Meta ~Ctrl<Key>9: string(0x0f) string("8") \n
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! VGA CONSOLE SIMULATION                                                   !
+! ----------------------                                                   !
+! when colors are needed, make xterm emulate as near as possible a VGA     !
+! console                                                                  !
+! run with:                                                                !
+! xterm -class VGA                                                         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+VGA.VT100.geometry: 80x24
+VGA.VT100.eightBitInput: false 
+! VGA*customization: +color
+VGA*loginShell: true
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! vga font http://www.inp.nsk.su/~bolkhov/files/fonts/univga/index.html    !
+! ---------------------------------------------------------------------    !
+! $ cd /tmp/                                                               !
+! $ wget http://www.inp.nsk.su/~bolkhov/files/fonts/univga/uni-vga.tgz     !
+! $ tar zxpvf uni-vga.tgz                                                  !
+! $ cd uni_vga                                                             !
+! $ mkdir ~/.fonts                                                         !
+! $ bdftopcf u_vga16.bdf  > ~/.fonts/u_vga16.pcf                           !
+! $ fc-cache -f -v                                                         !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+VGA*font: -bolkhov-vga-medium-r-normal--16-160-75-75-c-80-iso10646-1
+VGA*VT100.geometry: 80x24
+VGA*saveLines: 2000
+! VGA*termName: xterm-color
+VGA*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+VGA*colorMode: true
+
+VGA*customization: -color
+VGA*termName:  xterm-256color
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+! good old vga colors, but a bit brighter blue                             !
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+VGA*foreground: rgb:c8/c8/c8
+VGA*background: rgb:00/00/00
+!VGA*foreground: yellow
+!VGA*background: navy
+VGA*color0: rgb:00/00/00
+VGA*color1: rgb:a8/00/00
+VGA*color2: rgb:00/a8/00
+VGA*color3: rgb:a8/54/00
+! VGA*color4: rgb:00/00/a8
+VGA*color4: rgb:54/54/fc
+VGA*color5: rgb:a8/00/a8
+VGA*color6: rgb:00/a8/a8
+VGA*color7: rgb:a8/a8/a8
+VGA*color8: rgb:54/54/54
+VGA*color9: rgb:fc/54/54
+VGA*color10: rgb:54/fc/54
+VGA*color11: rgb:fc/fc/54
+VGA*color12: rgb:54/54/fc
+VGA*color13: rgb:fc/54/fc
+VGA*color14: rgb:54/fc/fc
+VGA*color15: rgb:fc/fc/fc
+VGA*boldMode: false
+VGA*colorBDMode: true
+VGA*colorBD: rgb:fc/fc/fc
+!  0 black     1  blue       2 green        3 cyan
+!  4 red       5  magenta    6 brown        7 white
+!  8 gray      9  lightblue 10 lightgreen  11 lightcyan
+!  12 magenta  13 pink      14 yellow      15 lightwhite
+
