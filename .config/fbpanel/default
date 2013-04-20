@@ -156,10 +156,15 @@ Plugin {
     type = launchbar
     config {
 	button {
-            tooltip = Web Browser
+            tooltip = Firefox
             image = /home/pablo/data/programs/firefox/icons/mozicon128.png
             action = /home/pablo/data/programs/firefox/firefox
     	}
+	button {
+            tooltip = Chrome
+            image = /usr/share/icons/hicolor/128x128/apps/google-chrome.png
+            action = /usr/bin/google-chrome
+	}
 	button {
             tooltip = Terminal
             icon = terminal
