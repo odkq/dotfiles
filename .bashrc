@@ -9,7 +9,7 @@ export HISTFILESIZE=0
 . /etc/bash_completion
 alias xlock='xscreensaver-command -lock'
 export EDITOR=vi
-# Some handy aliases
+# Some handy aliases to avoid innecesary colors
 alias mc="mc -ab"
 alias ls='ls --color=never -F'
 alias ipython='ipython --classic'
@@ -21,9 +21,9 @@ PS1="\l \w \$ "
 alias ditaa='java -jar /opt/ditaa0_9.jar'
 # reusing many routers with many different ssh keys yields a lot
 # of 'man-in-the-middle' errors from ssh ... disable those
-alias ssh='ssh -o "StrictHostKeyChecking=no"'
+alias ssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
+# Make lynx work with modern spyware sites :P
+alias lynx='lynx -accept_all_cookies'
 # Some paths twiddling for /opt apps'
-export LD_LIBRARY_PATH=/opt/calibre/lib/
-export PATH=/opt/calibre/bin:$PATH
 # odkq.com helper scripts are in ~/odkq/bin
 export PATH=$HOME/odkq/bin/:$PATH
