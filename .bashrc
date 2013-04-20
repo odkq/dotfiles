@@ -25,3 +25,5 @@ alias ssh='ssh -o "StrictHostKeyChecking=no"'
 # Some paths twiddling for /opt apps'
 export LD_LIBRARY_PATH=/opt/calibre/lib/
 export PATH=/opt/calibre/bin:$PATH
+# odkq.com helper scripts are in ~/odkq/bin
+export PATH=$HOME/odkq/bin/:$PATH
