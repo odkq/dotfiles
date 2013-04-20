@@ -12,8 +12,9 @@ shell bash
 # shows the tty you're in (see .bashrc)
 # hardstatus alwayslastline "%-Lw%{= WK}%50>%n%f* %t%{-}%+Lw%< "
 shelltitle $
-# Open 9 windows, from Alt-1 to Alt-n (see .Xresources to see
+# Open 10 windows, from Alt-1 to Alt-0 (see .Xresources to see
 # how the keys are mapped for xterm)
+screen -t " " bash
 screen -t " " bash
 screen -t " " bash
 screen -t " " bash
