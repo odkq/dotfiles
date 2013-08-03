@@ -15,7 +15,7 @@ alias ls='ls --color=never -F'
 alias ipython='ipython --classic'
 # Show tty number in prompt, so there is no need for
 # hardstatus line in screen
-PS1="\l \w \$ "
+PS1="\w \$ "
 # PS1="\w \$ "
 # alias ipython='ipython --classic'
 alias ditaa='java -jar /opt/ditaa0_9.jar'
@@ -27,3 +27,6 @@ alias lynx='lynx -accept_all_cookies'
 # Some paths twiddling for /opt apps'
 # odkq.com helper scripts are in ~/odkq/bin
 export PATH=$HOME/odkq/bin/:$PATH
+alias ipython=bpython
+[[ -f "/home/pablo/.local/share/Steam/setup_debian_environment.sh" ]] && source "/home/pablo/.local/share/Steam/setup_debian_environment.sh"
+

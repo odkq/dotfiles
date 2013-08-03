@@ -11,14 +11,14 @@
   XF86Launch1
 
 # Raise volume by 5% when pressing the volup key
-"aumix -v+5"
+"amixer set Master 5+ unmute"
   XF86AudioRaiseVolume
 
 # Lower main mixer volume by 5%
-"aumix -v-5"
+"amixer set Master 5- unmute"
   XF86AudioLowerVolume
 
-# Mute
-"aumix -v0"
+# Mute  
+"amixer set Master 0+ mute"
   XF86AudioMute
 

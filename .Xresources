@@ -44,16 +44,15 @@ XTerm*colorBD: white
 ! This is to send C-o + 1, C-o + 2, etc for
 ! screen window switching with Alt-1, Alt-2 and so
 *VT100.translations: #override \n\
-Meta ~Ctrl<Key>0: string(0x0f) string("9") \n\
-Meta ~Ctrl<Key>1: string(0x0f) string("0") \n\
-Meta ~Ctrl<Key>2: string(0x0f) string("1") \n\
-Meta ~Ctrl<Key>3: string(0x0f) string("2") \n\
-Meta ~Ctrl<Key>4: string(0x0f) string("3") \n\
-Meta ~Ctrl<Key>5: string(0x0f) string("4") \n\
-Meta ~Ctrl<Key>6: string(0x0f) string("5") \n\
-Meta ~Ctrl<Key>7: string(0x0f) string("6") \n\
-Meta ~Ctrl<Key>8: string(0x0f) string("7") \n\
-Meta ~Ctrl<Key>9: string(0x0f) string("8") \n
+Meta ~Ctrl<Key>1: string(0x0f) string("1") \n\
+Meta ~Ctrl<Key>2: string(0x0f) string("2") \n\
+Meta ~Ctrl<Key>3: string(0x0f) string("3") \n\
+Meta ~Ctrl<Key>4: string(0x0f) string("4") \n\
+Meta ~Ctrl<Key>5: string(0x0f) string("5") \n\
+Meta ~Ctrl<Key>6: string(0x0f) string("6") \n\
+Meta ~Ctrl<Key>7: string(0x0f) string("7") \n\
+Meta ~Ctrl<Key>8: string(0x0f) string("8") \n\
+Meta ~Ctrl<Key>9: string(0x0f) string("9") \n
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! VGA CONSOLE SIMULATION                                                   !
