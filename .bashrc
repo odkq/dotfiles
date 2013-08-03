@@ -9,10 +9,7 @@ export HISTFILESIZE=0
 . /etc/bash_completion
 alias xlock='xscreensaver-command -lock'
 export EDITOR=vi
-# Some handy aliases to avoid innecesary colors
-alias mc="mc -ab"
-alias ls='ls --color=never -F'
-alias ipython='ipython --classic'
+alias ls='ls -F'
 # Show tty number in prompt, so there is no need for
 # hardstatus line in screen
 PS1="\w \$ "
@@ -27,6 +24,7 @@ alias lynx='lynx -accept_all_cookies'
 # Some paths twiddling for /opt apps'
 # odkq.com helper scripts are in ~/odkq/bin
 export PATH=$HOME/odkq/bin/:$PATH
+# Newer things ...
 alias ipython=bpython
+alias screen=tmux
 [[ -f "/home/pablo/.local/share/Steam/setup_debian_environment.sh" ]] && source "/home/pablo/.local/share/Steam/setup_debian_environment.sh"
-

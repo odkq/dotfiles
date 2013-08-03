@@ -17,7 +17,7 @@
 
 Global {
 
-      edge = bottom
+      edge = right
       allign = left
 
 #     # length of margin (in pixels)
@@ -29,7 +29,7 @@ Global {
 #     height = 28
       setDockType = true
 #     # setPartialStrut = true
-      autoHide = true
+      autoHide = false
 #     # heightWhenHidden = 2
 }
 
