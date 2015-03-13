@@ -2,23 +2,27 @@
 # alsamixer commands and such
 
 # Default 'show' combination
-"xbindkeys_show" 
+"xbindkeys_show"
   control+shift + q
 
 # Use the Blue 'ThinkVantage' button as a showtcut
 # to lock the screen.
-"xscreensaver-command -lock"
+"xtrlock"
   XF86Launch1
 
-# Raise volume by 5% when pressing the volup key
-"amixer set Master 5+ unmute"
+# Or the Calculator key (fn + y in the
+"xscreensaver-command -lock"
+  XF86AudioStop
+
+# Raise volume by 22% when pressing the volup key
+"amixer set Master 5+"
   XF86AudioRaiseVolume
 
 # Lower main mixer volume by 5%
-"amixer set Master 5- unmute"
+"amixer set Master 5-"
   XF86AudioLowerVolume
 
-# Mute  
-"amixer set Master 0+ mute"
+# Mute
+"amixer set Master toggle"
   XF86AudioMute
 

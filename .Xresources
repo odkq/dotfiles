@@ -11,7 +11,7 @@ XTerm*VT100.eightBitInput: false
 XTerm*BorderWidth: 0
 ! Launch a login shell, with all init files
 XTerm*loginShell: true
-! Wether to support color or not 
+! Wether to support color or not
 XTerm*colorMode: true
 ! Best terminfo name for an xterm with color
 XTerm*termName: xterm-color
@@ -23,8 +23,9 @@ XTerm*background: black
 ! http://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/
 ! In Debian, apt-get install ttf-bitstream-vera
 XTerm*faceName: 'Bitstream Vera Sans Mono'
+!XTerm*faceName: 'Inconsolata'
 ! Size of the font
-XTerm*faceSize: 12
+XTerm*faceSize: 14
 ! Default window size in chars
 XTerm*VT100.geometry: 80x24
 ! Save 2000 lines of scrollback (Caps+AvPag, Caps+Repag)
@@ -32,7 +33,7 @@ XTerm*saveLines: 2000
 ! Redefine what is a space for better handling of middle button
 ! copy&paste
 XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
-! Change 'underlined' text for 'italic' text 
+! Change 'underlined' text for 'italic' text
 XTerm*italicULMode: true
 ! Do not allow bold attribute to overstrike fonts
 XTerm*boldMode: false
@@ -40,9 +41,12 @@ XTerm*boldMode: false
 XTerm*colorBDMode: true
 ! Bold color for default (bright white)
 XTerm*colorBD: white
+! brighter blue
+XTerm*color4: rgb:74/74/fc
+
 ! screen shortcuts
 ! This is to send C-o + 1, C-o + 2, etc for
-! screen window switching with Alt-1, Alt-2 and so
+! tmux window switching with Alt-1, Alt-2 and so
 *VT100.translations: #override \n\
 Meta ~Ctrl<Key>1: string(0x0f) string("1") \n\
 Meta ~Ctrl<Key>2: string(0x0f) string("2") \n\
@@ -53,6 +57,65 @@ Meta ~Ctrl<Key>6: string(0x0f) string("6") \n\
 Meta ~Ctrl<Key>7: string(0x0f) string("7") \n\
 Meta ~Ctrl<Key>8: string(0x0f) string("8") \n\
 Meta ~Ctrl<Key>9: string(0x0f) string("9") \n
+
+!!!!
+! White scheme. Way better for lighter environments
+!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+White*VT100.eightBitInput: false
+White*BorderWidth: 0
+White*loginShell: true
+White*colorMode: true
+White*termName: xterm-color
+White*foreground: black
+White*background: white
+White*faceName: 'Bitstream Vera Sans Mono'
+White*faceSize: 14
+White*VT100.geometry: 80x24
+White*saveLines: 2000
+White*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+White*italicULMode: true
+White*boldMode: true
+White*colorBDMode: false
+White*colorBD: blue
+
+White*color0: rgb:00/00/00
+White*color1: rgb:78/00/00
+White*color2: rgb:00/78/00
+White*color3: rgb:78/34/00
+White*color4: rgb:00/00/78
+! White*color4: rgb:54/54/fc
+White*color5: rgb:78/00/a8
+White*color6: rgb:00/78/78
+White*color7: rgb:ff/ff/ff
+White*color8: rgb:34/34/34
+White*color9: rgb:cc/34/34
+White*color10: rgb:34/cc/34
+White*color11: rgb:cc/cc/34
+White*color12: rgb:34/34/cc
+White*color13: rgb:cc/34/cc
+White*color14: rgb:34/cc/cc
+White*color15: rgb:ff/ff/ff
+
+!!!!
+! Black and white
+!!!!
+BlackWhite*VT100.eightBitInput: false
+BlackWhite*BorderWidth: 0
+BlackWhite*loginShell: true
+BlackWhite*colorMode: false
+BlackWhite*termName: xterm-mono
+BlackWhite*foreground: black
+BlackWhite*background: white
+BlackWhite*faceName: 'Bitstream Vera Sans Mono'
+BlackWhite*faceSize: 14
+BlackWhite*VT100.geometry: 80x24
+BlackWhite*saveLines: 2000
+BlackWhite*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
+BlackWhite*italicULMode: true
+BlackWhite*boldMode: true
+BlackWhite*colorBDMode: false
+BlackWhite*colorBD: blue
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! VGA CONSOLE SIMULATION                                                   !
@@ -83,9 +146,9 @@ VGA*saveLines: 2000
 ! VGA*termName: xterm-color
 VGA*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
 VGA*colorMode: true
-
+VGA*BorderWidth: 0
 VGA*customization: -color
-VGA*termName:  xterm-256color
+VGA*termName:  xterm-color
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ! good old vga colors, but a bit brighter blue                             !
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -118,3 +181,90 @@ VGA*colorBD: rgb:fc/fc/fc
 !  8 gray      9  lightblue 10 lightgreen  11 lightcyan
 !  12 magenta  13 pink      14 yellow      15 lightwhite
 
+! Solarized color scheme for the X Window System
+!
+! http://ethanschoonover.com/solarized
+
+
+! Common
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+
+! Dark
+
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+
+! Light
+
+! #define S_base03        #fdf6e3
+! #define S_base02        #eee8d5
+! #define S_base01        #93a1a1
+! #define S_base00        #839496
+! #define S_base0         #657b83
+! #define S_base1         #586e75
+! #define S_base2         #073642
+! #define S_base3         #002b36
+
+
+! To only apply colors to your terminal, for example, prefix
+! the color assignment statement with its name. Example:
+!
+! URxvt*background:            S_base03
+
+solarized*background:              S_base03
+solarized*foreground:              S_base0
+solarized*fading:                  40
+solarized*fadeColor:               S_base03
+solarized*cursorColor:             S_base1
+solarized*pointerColorBackground:  S_base01
+solarized*pointerColorForeground:  S_base1
+
+solarized*color0:                  S_base02
+solarized*color1:                  S_red
+solarized*color2:                  S_green
+solarized*color3:                  S_yellow
+solarized*color4:                  S_blue
+solarized*color5:                  S_magenta
+solarized*color6:                  S_cyan
+solarized*color7:                  S_base2
+solarized*color9:                  S_orange
+solarized*color8:                  S_base03
+solarized*color10:                 S_base01
+solarized*color11:                 S_base00
+solarized*color12:                 S_base0
+solarized*color13:                 S_violet
+solarized*color14:                 S_base1
+solarized*color15:                 S_base3
+
+solarized*boldMode: false
+solarized*colorBDMode: true
+! solarized*colorBD: rgb:fc/fc/fc
+solarized*italicULMode: true
+! Allow for bold attribute to have brigther colors
+solarized*colorBD: white
+solarized*faceName: 'Bitstream Vera Sans Mono'
+! Size of the font
+solarized*faceSize: 14
+! Default window size in chars
+solarized*VT100.geometry: 80x24
+! Save 2000 lines of scrollback (Caps+AvPag, Caps+Repag)
+solarized*saveLines: 2000
+! Redefine what is a space for better handling of middle button
+! copy&paste
+solarized*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
