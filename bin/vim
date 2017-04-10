@@ -1,0 +1,29 @@
+#!/usr/bin/env python3
+# When the file to be passed to vim is in ~/workspace, cwd to
+# workspace, create .tags file and call vim there
+import os
+import sys
+import subprocess
+
+VIM = '/usr/bin/vim'
+WORKSPACE_DIR = 'workspace'
+
+cwd = os.getcwd()
+
+cwds = cwd.split('/')
+
+if len(sys.argv) == 1:
+    sys.exit(subprocess.call([VIM]))
+
+try:
+    idx = cwds.index(WORKSPACE_DIR) + 2
+except ValueError:
+    sys.exit(subprocess.call([VIM] + sys.argv[1:]))
+
+basedir = str.join('/', cwds[:idx])
+prefixdir = str.join('/', cwds[idx:])
+
+os.chdir(basedir)
+subprocess.call(['ctags', '-R', '-o', '.tags'])
+
+sys.exit(subprocess.call(([VIM] + [os.path.join(prefixdir, sys.argv[1])] + sys.argv[2:])))
